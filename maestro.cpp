@@ -9,9 +9,29 @@ public:
   char fecha[MAX];
   char gradoA[MAX];
   char cat[MAX];
+  int n=0;
+public:
+  void registro()
+  {
+    cout<<"Cuantos deseas registrar?: "<<endl;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+      cout<<"Ingrese numero de matricula: "<<endl;
+      cin>>num[i];
+      for(int j=0;j<n;j++)
+      {
+        if(num[i]==num[j])
+        {
+          cout<<"Ese numero ya existe! no puedes crear registro doble."<<endl;
+        }
+      }
+    }
+  };
 };
 int main()
 {
  Maestros reg;
- cout<<"Registre numero de maestro: "<<endl;
+ reg.registro();
+ return 0;
 }
